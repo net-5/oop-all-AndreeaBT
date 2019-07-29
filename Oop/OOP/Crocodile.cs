@@ -4,17 +4,26 @@ using System.Text;
 
 namespace OOP
 {
-    public class Crocodile :Reptiles, ISwimming, ICrawling
+    public class Crocodile :Reptiles, ISwimming, ICrawling,IMove
     {
         public Crocodile(string name) : base(name) { }
-        //public new int Speed { get { return Speed; } set { Speed = value; } }
         public Gender gender = Gender.Female;
-        public new int Speed = 5;
-
+        private int speed;
+        public  int Speed
+        {
+            get
+            {
+                return speed;
+            }
+            set
+            {
+                speed = value;
+            }
+        }
 
         public void Crawls()
         {
-            Console.WriteLine("When I am lazy I barely crawl");
+            Console.WriteLine("When I am lazy I barrely crawl");
         }
 
         public void CrawlsFast()
@@ -31,6 +40,11 @@ namespace OOP
         public void SwimsAboveWater()
         {
             Console.WriteLine("I can swim above water when I am relaxed");
+        }
+        public new void Movement()
+        {
+            Console.WriteLine($"On a scale from 1 to 10 my speed is {Speed}");
+
         }
     }
 }

@@ -5,13 +5,22 @@ using System.Text;
 namespace OOP
 {
 
-    public class Bee : Insects, IFlying, ICrawling
+    public class Bee : Insects, IFlying, ICrawling, IMove
     {
         public Bee(string name) : base(name) { }
-        //public new int Speed { get { return Speed; } set { Speed = value; } }
         public Gender gender = Gender.Male;
-        public new int Speed = 3;
-
+        private int speed;
+        public int Speed
+        {
+            get
+            {
+                return speed;
+            }
+            set
+            {
+                speed = value;
+            }
+        }
 
         public void Crawls()
         {
@@ -20,22 +29,26 @@ namespace OOP
 
         public void CrawlsFast()
         {
-            throw new NotImplementedException();
+           
         }
 
         public void DoesNotFly()
         {
-            throw new NotImplementedException();
+           
         }
 
         public void FlyesLongDistances()
         {
-            throw new NotImplementedException();
+           
         }
 
         public void FlyesShortDistances()
         {
             Console.WriteLine("I fly short distances, from a flower to the beehive.");
+        }
+        public new void Movement()
+        {
+            Console.WriteLine($"On a scale from 1 to 10 my speed is{Speed}");
         }
     }
 }

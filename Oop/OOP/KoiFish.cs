@@ -4,13 +4,23 @@ using System.Text;
 
 namespace OOP
 {
-    class KoiFish : Fishes, ISwimming
+    class KoiFish : Fishes, ISwimming,IMove
     {
         public KoiFish(string name) : base(name) { }
-        //public new int Speed { get { return Speed; } set { Speed = value; } }
+        
         public Gender gender = Gender.Female;
-        public new int Speed = 1;
-
+        private int speed;
+        public int Speed
+        {
+            get
+            {
+                return speed;
+            }
+            set
+            {
+                speed = value;
+            }
+        }
 
         public void SwimsBeneathWather()
         {
@@ -19,6 +29,12 @@ namespace OOP
 
         public void SwimsAboveWater()
         {
-            Console.WriteLine("I sometimes try to reach above when I receive food but I don't swim above water");        }
+            Console.WriteLine("I sometimes try to reach above when I receive food but I don't swim above water");
+        }
+        public new void Movement()
+        {
+            Console.WriteLine($"On a scale from 1 to 10 my speed is {Speed}");
+
+        }
     }
 }

@@ -4,10 +4,9 @@ using System.Text;
 
 namespace OOP
 {
-    interface ICrawling
+    interface IMove
     {
-        void Crawls();
-        void CrawlsFast();
-
+         void Movement();
+         int Speed { get; set; }
     }
 }

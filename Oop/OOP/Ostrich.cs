@@ -5,13 +5,23 @@ using System.Text;
 namespace OOP
 {
 
-    class Ostrich :Birds, IWalking
+    class Ostrich :Birds, IWalking, IMove
     {
         public Ostrich(string name) : base(name) { }
-        //public new int Speed { get { return Speed; } set { Speed = value; } }
+      
         public Gender gender = Gender.Female;
-        public new int Speed = 7;
-
+        private int speed;
+        public int Speed
+        {
+            get
+            {
+                return speed;
+            }
+            set
+            {
+                speed = value;
+            }
+        }
 
         public void Runs()
         {
@@ -20,11 +30,16 @@ namespace OOP
 
         public void Walks()
         {
-            Console.WriteLine("I can walk");
+            Console.WriteLine("I have a funny walk");
         }
         public void DoesNotFly()
         {
             Console.WriteLine("I am a bird but I can't fly");
+        }
+        public new void Movement()
+        {
+            Console.WriteLine($"On a scale from 1 to 10 my speed is {Speed}");
+
         }
     }
 }

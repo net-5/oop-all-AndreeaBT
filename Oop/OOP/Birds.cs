@@ -5,9 +5,19 @@ using System.Text;
 namespace OOP
 {
 
-    public class Birds : Animals
+    public abstract class Birds : Animals, IMove
     {
         public Birds(string name) : base(name) { }
 
+        public int Speed { get; set; }
+
+      
+        public  void Movement()
+        {
+
+        }
+
+      
+      
     }
 }

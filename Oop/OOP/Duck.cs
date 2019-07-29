@@ -4,16 +4,25 @@ using System.Text;
 
 namespace OOP
 {
-    class Duck : Birds, IFlying, ISwimming, IWalking
+    class Duck : Birds, IFlying, ISwimming, IWalking,IMove
     {
         public Duck(string name) : base(name) { }
-        //public new int Speed { get { return Speed; } set { Speed = value; } }
         public Gender gender = Gender.Male;
-        public new int Speed = 4;
-
+        private int speed;
+        public int Speed
+        {
+            get
+            {
+                return speed;
+            }
+            set
+            {
+                speed = value;
+            }
+        }
         public void DoesNotFly()
         {
-            throw new NotImplementedException();
+            
         }
 
         public void FlyesLongDistances()
@@ -28,7 +37,7 @@ namespace OOP
 
         public void Runs()
         {
-            throw new NotImplementedException();
+            
         }
 
         public void SwimsBeneathWather()
@@ -43,6 +52,11 @@ namespace OOP
         public void Walks()
         {
             Console.WriteLine("Sometimes I walk and I have a funny walk that makes people laugh");
+        }
+        public new void Movement()
+        {
+            Console.WriteLine($"On a scale from 1 to 10 my speed is {Speed}");
+
         }
     }
 }

@@ -4,16 +4,18 @@ using System.Text;
 
 namespace OOP
 {
+  
     public enum Gender
     {
         Female,
         Male
     }
-    public class Animals
+    public abstract class Animals
     {
       
         public string Name { get; set; }
         public Animals(string name) { string Name = name; }
-        public int Speed { get; set; }
+
+       
     }
 }

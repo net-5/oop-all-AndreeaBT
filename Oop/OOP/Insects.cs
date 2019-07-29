@@ -4,8 +4,15 @@ using System.Text;
 
 namespace OOP
 {
-    public class Insects : Animals
+    public abstract class Insects : Animals, IMove
     {
         public Insects(string name) : base(name) { }
+
+        public int Speed { get; set; }
+
+        public void Movement()
+        {
+
+        }
     }
 }

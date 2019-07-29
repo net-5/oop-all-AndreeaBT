@@ -4,12 +4,23 @@ using System.Text;
 
 namespace OOP
 {
-    class Bat : Mammals, IFlying, ICrawling
+    public class Bat : Mammals, IFlying, ICrawling, IMove
     {
         public Bat(string name) : base(name) { }
-        //public new int Speed { get { return Speed; } set { Speed = value; } }
+
         public Gender gender = Gender.Male;
-        public new int Speed = 4;
+        private int speed;
+        public int  Speed
+        {
+            get
+            {
+                return speed;
+            }
+            set
+            {
+                speed = value;
+            }
+        }
 
         public void Crawls()
         {
@@ -18,22 +29,28 @@ namespace OOP
 
         public void CrawlsFast()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("I barrely crawl.");
         }
 
         public void DoesNotFly()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Of course I can fly.");
         }
 
         public void FlyesLongDistances()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("I can't fly long distances.");
         }
 
         public void FlyesShortDistances()
         {
             Console.WriteLine("I fly but I can't go long distances");
+        }
+
+        public new void Movement()
+        {
+            Console.WriteLine($"On a scale from 1 to 10 my speed is {Speed}");
+           
         }
     }
 }
